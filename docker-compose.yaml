@@ -1,0 +1,13 @@
+
+version: '2'
+services:
+  lb:
+    image: traefik:v2.1.4 # The official Traefik docker image
+    ports:
+      - "80:80"     # The HTTP port
+      - "8080:8080" # The Web UI (enabled by --api)
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
+      - ./traefik.toml:/etc/traefik/traefik.toml # trafik config file
+      - "./tls/:/opt/certs/"

@@ -1,0 +1,15 @@
+# Dynamic configuration
+
+tls:
+  certificates:
+    - certFile: /opt/certs/cert.pem
+      keyFile: /opt/certs/key.pem
+      stores:
+        - default
+# Dynamic configuration
+
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /opt/certs/cert.pem 
+        keyFile: /opt/certs/key.pem
